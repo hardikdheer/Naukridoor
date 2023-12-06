@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2022 at 10:36 PM
+-- Generation Time: Aug 16, 2022 at 12:54 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -246,7 +246,6 @@ CREATE TABLE `job_apply` (
 INSERT INTO `job_apply` (`id`, `first_name`, `last_name`, `dob`, `file`, `id_job`, `job_seeker`, `mobile_number`, `exp`, `collegename`, `qualification`, `percentage`, `passout`) VALUES
 (33, 'Hardik', 'Dheer', '2022-08-10', '0001.pdf', '10', 'haritdheer@gmail.com ', 7644546, '', 'JNU', 'B.Tech', '83', '2022'),
 (34, 'Harit', 'Dheer', '2022-08-02', '965.pdf', '13', 'hardikdheer12@gmail.com ', 76464996, '2', 'KLU', 'B.Tech', '64', '2018'),
-(35, 'Harvy', 'Dheer', '2022-08-02', 'edc exp 7.pdf', '15', 'hardikdheer12@gmail.com ', 7879, '', 'ADGITM', 'B.Tech', '90', '2020'),
 (36, 'Jai', 'Singh', '2022-08-30', '53-CSEB-HARDIK DHEER-AP PRACTICAL FILE.pdf', '15 ', 'amit@gmail.com ', 44654, '', 'AAIT', 'B.Tech', '77', '2021'),
 (38, 'Sahil', 'Sharma', '2022-08-11', 'AP-Exp-5&6.pdf', '13 ', 'mytest@gmail.com ', 78787, '0', 'UIT', 'M.Tech', '89', '2016');
 
@@ -296,211 +295,7 @@ CREATE TABLE `profiles` (
 --
 
 INSERT INTO `profiles` (`id`, `img`, `name`, `dob`, `number`, `email`, `user_email`) VALUES
-(19, 'download.png', 'vivek kumar pandey', '', '08210991424', 'vivek65k@gmail.com', 'vivek65k@gmail.com');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `questionset`
---
-
-CREATE TABLE `questionset` (
-  `id` int(11) NOT NULL,
-  `title` varchar(233) NOT NULL,
-  `option1` varchar(255) NOT NULL,
-  `option2` varchar(255) NOT NULL,
-  `option3` varchar(255) NOT NULL,
-  `option4` varchar(255) NOT NULL,
-  `answer` varchar(222) NOT NULL,
-  `employee` varchar(222) NOT NULL,
-  `qset` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `questionset`
---
-
-INSERT INTO `questionset` (`id`, `title`, `option1`, `option2`, `option3`, `option4`, `answer`, `employee`, `qset`) VALUES
-(1, 'Which among the following is the most unique feature of Dholavira site of the Indus Valley Civilization?', 'Its cities were horizontally divided in multiple parts', ' Its cities were unevenly divided', 'Its cities were divided into 3 parts', 'None of these', 'B', 'vivek65k@gmail.com', 'set1'),
-(2, 'Which among the following University was founded by Ramapala, the ruler of Pala dynasty?', 'Somapuri', 'Vallabhi', 'Jagadal', 'Odantpuri', 'C', 'vivek65k@gmail.com', 'set2'),
-(3, 'At which age Gautam Buddha got Nirvana?', '24', '35', '38', '42', 'C', 'vivek65k@gmail.com', 'set3'),
-(4, 'Who among the following was the founder of Pushyabhuti Dynasty ?', 'Pushyabhuti', 'Prabhakar Vardhan', 'Aditya vardhan', 'Harshavardhan', 'C', 'vivek65k@gmail.com', 'set4'),
-(5, 'Which of the following inscriptions mentions the name of Kalidasa?', ' Allahabad pillar inscription', 'Aihole inscription', 'Alapadu grant', 'Hanumakonda inscription', 'B', 'vivek65k@gmail.com', 'set5'),
-(25, 'select 2', '1', '2', '3', '4', 'B', 'abc@gmail.com', 'set1'),
-(28, 'select 1', '1', '2', '3', '4', 'A', 'abc@gmail.com', 'set4'),
-(82, 'select 3', '3', '2', '5', '6', 'A', 'abc@gmail.com', 'set2'),
-(86, 'select 4', '1', '4', '2', '3', 'B', 'abc@gmail.com', 'set3'),
-(87, 'select 5', '5', '4', '3', '1', 'A', 'abc@gmail.com', 'set5');
-
---
--- Triggers `questionset`
---
-DELIMITER $$
-CREATE TRIGGER `insert_questio` AFTER INSERT ON `questionset` FOR EACH ROW insert into questionset (title,option1,option2,option3,option4,answer,employee,qset) values (new.title,new.option1,new.option2,new.option3,new.option4,new.answer,new.employee,new.qset)
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `questionset1`
---
-
-CREATE TABLE `questionset1` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `option1` varchar(255) NOT NULL,
-  `option2` varchar(255) NOT NULL,
-  `option3` varchar(255) NOT NULL,
-  `option4` varchar(255) NOT NULL,
-  `answer` varchar(225) NOT NULL,
-  `employee` varchar(222) NOT NULL,
-  `qset` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `questionset1`
---
-
-INSERT INTO `questionset1` (`id`, `title`, `option1`, `option2`, `option3`, `option4`, `answer`, `employee`, `qset`) VALUES
-(1, 'test 2', 'a', 'b', 'c', 'd', 'B', 'vivek65k@gmail.com', 'set1'),
-(2, 'test2', 'simplexml_load_string()', ' loadxml()', 'Both of the above.', 'dd', 'C', 'vivek65k@gmail.com', 'set2'),
-(3, 'Which of the following is correct about constants vs variables in PHP?', ' Constants may be defined and accessed anywhere without regard to variable scoping rules.', ' Once the Constants have been set, may not be redefined or undefined.', 'dd', 'None of the above.', 'C', 'vivek65k@gmail.com', 'set3'),
-(4, 'Input Radio checked Property', 'a', '(int)$num', '(float)$num;', 'ddd', 'B', 'vivek65k@gmail.com', 'set5'),
-(5, 'In which rock edict Ashoka mentioned “Every Human is my child…”?', 'Major Rock Edict V', '] Major Rock Edict IV', 'Major Rock Edict VI', 'Major Rock Edict VII', 'B', 'vivek65k@gmail.com', 'set4'),
-(47, 'select 6', '6', '7', '8', '9', 'A', 'abc@gmail.com', 'set1'),
-(48, 'select 7', '3', '7', '1', '2', 'B', 'abc@gmail.com', 'set2'),
-(49, 'select 8', '1', '5', '8', '9', 'C', 'abc@gmail.com', 'set3'),
-(50, 'select 9', '1', '4', '7', '9', 'D', 'abc@gmail.com', 'set4'),
-(51, 'select 10', '10', '11', '54', '21', 'A', 'abc@gmail.com', 'set5');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `questionset2`
---
-
-CREATE TABLE `questionset2` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `option1` varchar(255) NOT NULL,
-  `option2` varchar(255) NOT NULL,
-  `option3` varchar(255) NOT NULL,
-  `option4` varchar(255) NOT NULL,
-  `answer` varchar(255) NOT NULL,
-  `employee` varchar(222) NOT NULL,
-  `qset` varchar(222) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `questionset2`
---
-
-INSERT INTO `questionset2` (`id`, `title`, `option1`, `option2`, `option3`, `option4`, `answer`, `employee`, `qset`) VALUES
-(1, 'test 2', 'a', 'b', 'c', 'd', 'B', 'vivek65k@gmail.com', 'set1'),
-(2, 'test2', 'simplexml_load_string()', ' loadxml()', 'Both of the above.', 'dd', 'D', 'vivek65k@gmail.com', 'set2'),
-(3, 'At which among the following places, the Dharma-Chakra Jina Vihara was constructed by Gahadavala Queen Kumaradevi?', 'Bodha Gaya', 'Rajgrih', 'Kushinagar', 'Sarnath', 'C', 'vivek65k@gmail.com', 'set3'),
-(4, 'Among all the major rock edicts of Ashoka, which one is the longest?', '7th major rock edict', '11th major rock edict', '13th major rock edict', '9th major rock edict', 'B', 'vivek65k@gmail.com', 'set4'),
-(5, 'In context of Mauryan administration, who was regarded as the ‘Chief treasury officer’?', 'Samaharta', 'Paura', 'Sannidhata', 'Karmantika', 'B', 'vivek65k@gmail.com', 'set5'),
-(40, 'select 11', '11', '12', '13', '14', 'A', 'abc@gmail.com', 'set1'),
-(41, 'select 12', '11', '12', '13', '14', 'B', 'abc@gmail.com', 'set2'),
-(42, 'select 13', '11', '12', '13', '14', 'C', 'abc@gmail.com', 'set3'),
-(43, 'select 14', '11', '12', '13', '14', 'D', 'abc@gmail.com', 'set4'),
-(44, 'select 15', '15', '13', '11', '12', 'A', 'abc@gmail.com', 'set5');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `questionset3`
---
-
-CREATE TABLE `questionset3` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `option1` varchar(255) NOT NULL,
-  `option2` varchar(255) NOT NULL,
-  `option3` varchar(255) NOT NULL,
-  `option4` varchar(255) NOT NULL,
-  `answer` varchar(255) NOT NULL,
-  `employee` varchar(255) NOT NULL,
-  `qset` varchar(222) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `questionset3`
---
-
-INSERT INTO `questionset3` (`id`, `title`, `option1`, `option2`, `option3`, `option4`, `answer`, `employee`, `qset`) VALUES
-(1, 'Wr', '1, -1, π/2, 0', ' 2 + X2 + x → coefficient of X2 = 1', '2 – X2 + X3 → coefficient of X2 = -1', '(π/2) X2 +x → coefficient of X2 = π/2', 'C', 'vivek65k@gmail.com', 'set1'),
-(2, 'Th', 'Constant Polynomial', 'Cubic Polynomial', 'Quadratic Polynomial', 'Linear Polynomial', 'C', 'vivek65k@gmail.com', 'set2'),
-(3, ' C', 'Y=−x2', 'y=−x3', ' y=−x7', 'Three curves i.e.', 'C', 'vivek65k@gmail.com', 'set3'),
-(4, 'If', '2', '-1', '1', '0', 'C', 'vivek65k@gmail.com', 'set4'),
-(5, 'Nu', 'More than 3', '3', '2', '1', 'B', 'vivek65k@gmail.com', 'set5'),
-(22, 'select 21', '21', '22', '23', '24', 'A', 'abc@gmail.com', 'set1'),
-(23, 'select 22', '21', '22', '23', '24', 'B', 'abc@gmail.com', 'set2'),
-(24, 'select 23', '21', '22', '23', '24', 'C', 'abc@gmail.com', 'set3'),
-(25, 'select 24', '21', '22', '23', '24', 'D', 'abc@gmail.com', 'set4'),
-(26, 'select 25', '25', '26', '27', '28', 'A', 'abc@gmail.com', 'set5');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `questionset4`
---
-
-CREATE TABLE `questionset4` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `option1` varchar(233) NOT NULL,
-  `option2` varchar(255) NOT NULL,
-  `option3` varchar(255) NOT NULL,
-  `option4` varchar(255) NOT NULL,
-  `answer` varchar(222) NOT NULL,
-  `employee` varchar(222) NOT NULL,
-  `qset` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `questionset4`
---
-
-INSERT INTO `questionset4` (`id`, `title`, `option1`, `option2`, `option3`, `option4`, `answer`, `employee`, `qset`) VALUES
-(1, 'Name of the first Atomic Submarine of India?    ', 'I.N.S Chakra', 'R.N. Shukla', 'V.R. Gill', 'D.B. Mahawar', 'B', 'vivek65k@gmail.com', 'set1'),
-(2, 'What is the name of first British to visit India?  ', 'Hawkins', 'Norway', 'Devid', 'George Bush', 'B', 'vivek65k@gmail.com', 'set2'),
-(3, 'Name of the first election commissioner of India?', 'Sukumar Sen', 'R.N. Shukla', ' V.R. Gill', 'D.B. Mahawar', 'C', 'vivek65k@gmail.com', 'set3'),
-(4, 'Name of the first university of India?', 'Nalanda University', 'Taxshila University', 'Jawahar University', 'Dronacharya University', 'B', 'vivek65k@gmail.com', 'set4'),
-(5, 'Name of the first Chinese pilgrim to visit India?', 'Fa-hien', 'Shekaspear', 'Hein sung', 'Charles', 'C', 'vivek65k@gmail.com', 'set5'),
-(22, 'select 26', '25', '26', '27', '28', 'B', 'abc@gmail.com', 'set1'),
-(23, 'select 27', '25', '26', '27', '28', 'C', 'abc@gmail.com', 'set2'),
-(24, 'select 28', '26', '27', '28', '29', 'C', 'abc@gmail.com', 'set3'),
-(25, 'select 29', '29', '30', '31', '32', 'A', 'abc@gmail.com', 'set4'),
-(26, 'select 30', '29', '30', '31', '32', 'B', 'abc@gmail.com', 'set5');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `question_title`
---
-
-CREATE TABLE `question_title` (
-  `id` int(11) NOT NULL,
-  `set1` varchar(255) NOT NULL,
-  `set2` varchar(255) NOT NULL,
-  `set3` varchar(255) NOT NULL,
-  `set4` varchar(255) NOT NULL,
-  `set5` varchar(255) NOT NULL,
-  `category` int(11) NOT NULL,
-  `created_on` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_on` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `question_title`
---
-
-INSERT INTO `question_title` (`id`, `set1`, `set2`, `set3`, `set4`, `set5`, `category`, `created_on`, `updated_on`) VALUES
-(6, 'Aptitude test', 'Programming test', 'Reasoning test', 'Math test', 'Current affairs', 2, '2021-03-05 07:46:17', '2021-03-05 07:46:17'),
-(8, 'Aptitude test', 'Programming test', 'Reasoning test', 'Math test', 'Current affairs ', 2, '2021-03-14 18:12:28', '2021-03-14 18:12:28');
+(19, 'logo.png', 'hardik dheer', '2022-08-31', '564784', 'haritdheer@gmail.com', 'mytest@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -528,6 +323,29 @@ INSERT INTO `radioopt` (`id`, `user`, `marks`, `total`, `company_email`) VALUES
 (5, 'rohit@gmail.com', '4', '5', 'abc@gmail.com'),
 (6, 'rohit@gmail.com', '4', '5', 'abc@gmail.com'),
 (7, 'rohit@gmail.com', '4', '5', 'abc@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `selected_candidate`
+--
+
+CREATE TABLE `selected_candidate` (
+  `id` int(111) NOT NULL,
+  `name` varchar(111) NOT NULL,
+  `email` varchar(111) NOT NULL,
+  `mobile` int(111) NOT NULL,
+  `exp` varchar(111) NOT NULL,
+  `college` varchar(111) NOT NULL,
+  `emp` varchar(111) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `selected_candidate`
+--
+
+INSERT INTO `selected_candidate` (`id`, `name`, `email`, `mobile`, `exp`, `college`, `emp`) VALUES
+(1, 'Harit Dheer', 'hardikdheer12@gmail.com ', 76464996, '2', '', 'amit@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -589,45 +407,15 @@ ALTER TABLE `profiles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `questionset`
---
-ALTER TABLE `questionset`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `questionset1`
---
-ALTER TABLE `questionset1`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `questionset2`
---
-ALTER TABLE `questionset2`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `questionset3`
---
-ALTER TABLE `questionset3`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `questionset4`
---
-ALTER TABLE `questionset4`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `question_title`
---
-ALTER TABLE `question_title`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `radioopt`
 --
 ALTER TABLE `radioopt`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `selected_candidate`
+--
+ALTER TABLE `selected_candidate`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -689,46 +477,16 @@ ALTER TABLE `profiles`
   MODIFY `id` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `questionset`
---
-ALTER TABLE `questionset`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
-
---
--- AUTO_INCREMENT for table `questionset1`
---
-ALTER TABLE `questionset1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
-
---
--- AUTO_INCREMENT for table `questionset2`
---
-ALTER TABLE `questionset2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
-
---
--- AUTO_INCREMENT for table `questionset3`
---
-ALTER TABLE `questionset3`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- AUTO_INCREMENT for table `questionset4`
---
-ALTER TABLE `questionset4`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- AUTO_INCREMENT for table `question_title`
---
-ALTER TABLE `question_title`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
 -- AUTO_INCREMENT for table `radioopt`
 --
 ALTER TABLE `radioopt`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `selected_candidate`
+--
+ALTER TABLE `selected_candidate`
+  MODIFY `id` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
